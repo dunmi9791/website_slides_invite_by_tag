@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mail_template_course_invite_by_tag" model="mail.template">
+        <field name="name">Course Invite by Tag</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="subject">Invitation to ${ctx.get('invite_course_name') or 'a course'}</field>
+        <field name="email_from">${(user.email_formatted or user.company_id.email_formatted or '')}</field>
+        <field name="partner_to">${object.id}</field>
+        <field name="body_html" type="html">
+            <div style="margin: 0; padding: 0;">
+                <p style="margin: 0 0 12px 0;">Hello <t t-out="object.name or 'Participant'"/>,</p>
+                <p style="margin: 0 0 12px 0;">
+                    You have been invited to participate in the course
+                    <strong><t t-out="ctx.get('invite_course_name')"/></strong>.
+                </p>
+                <p style="margin: 0 0 12px 0;">
+                    <a t-att-href="ctx.get('invite_course_url')" style="padding: 10px 16px; background-color: #875A7B; color: #ffffff; text-decoration: none; border-radius: 4px; display: inline-block;">
+                        Open Course
+                    </a>
+                </p>
+                <p style="margin: 0 0 12px 0;">
+                    If the button above does not work, copy this link into your browser:<br/>
+                    <span t-out="ctx.get('invite_course_url')"/>
+                </p>
+                <p style="margin: 0;">Regards,<br/><t t-out="user.name"/></p>
+            </div>
+        </field>
+        <field name="auto_delete" eval="True"/>
+    </record>
+</odoo>
