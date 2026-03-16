@@ -9,7 +9,7 @@
                 <button name="action_open_invite_by_tag_wizard"
                         type="object"
                         string="Invite by Tag"
-                        class="btn btn-primary"
+                        class="oe_highlight"
                         groups="website_slides.group_website_slides_manager"/>
             </xpath>
         </field>

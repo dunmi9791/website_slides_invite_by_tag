@@ -1,14 +1,16 @@
 {
     'name': 'eLearning Invite by Tag',
-    'version': '18.0.1.0.0',
-    'summary': 'Invite and enroll eLearning participants by contact tags',
+    'version': '18.0.1.1.0',
+    'summary': 'Invite and enroll eLearning participants by employee tags and partner tags',
     'description': '''
-Bulk invite or enroll eLearning course participants from partner tags.
+Bulk invite or enroll eLearning course participants from:
+- Partner Tags
+- Employee Tags
 
 Features:
-- Invite from course form using partner tags
+- Invite from course form using partner tags and/or employee tags
 - Match any selected tag or all selected tags
-- Preview matched participants before execution
+- Preview matched employees and participants before execution
 - Exclude already enrolled participants
 - Optional direct enrollment
 - Optional email notification with course link
@@ -16,7 +18,7 @@ Features:
     'category': 'Website/eLearning',
     'author': 'OpenAI',
     'license': 'LGPL-3',
-    'depends': ['website_slides', 'contacts', 'mail'],
+    'depends': ['website_slides', 'contacts', 'mail', 'hr'],
     'data': [
         'security/ir.model.access.csv',
         'data/mail_template.xml',
