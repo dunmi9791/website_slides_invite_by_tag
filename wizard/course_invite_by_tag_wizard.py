@@ -256,6 +256,7 @@ class CourseInviteByTagWizard(models.TransientModel):
             template.with_context(
                 invite_course_name=self.course_id.name,
                 invite_course_url=course_url,
+                user=self.env.user,
             ).send_mail(partner.id, force_send=True)
             count += 1
 
